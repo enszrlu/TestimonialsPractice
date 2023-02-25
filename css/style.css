@@ -1,0 +1,119 @@
+@import url('https://fonts.cdnfonts.com/css/barlow-semi-condensed');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Barlow Semi Condensed', sans-serif;
+    font-weight: 500;
+    font-size: 13px;
+}
+
+body {
+    min-height: 100vh;
+    height: fit-content;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: hsl(210, 46%, 95%);
+}
+
+.grid-container {
+    width: 80vw;
+    height: 80%;
+    margin: auto;
+    display: grid;
+    grid-template-areas:
+        'dan dan jon kira'
+        'jea pat pat kira';
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(2, auto);
+}
+.card {
+    margin: 10px;
+    border-radius: 15px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: white;
+}
+
+.card:nth-of-type(1) {
+    grid-area: dan;
+    background-color: hsl(263, 55%, 52%);
+}
+
+.card:nth-of-type(2) {
+    grid-area: jon;
+    background-color: hsl(217, 19%, 35%);
+}
+
+.card:nth-of-type(3) {
+    color: rgb(62, 68, 84);
+    grid-area: jea;
+}
+.card:nth-of-type(4) {
+    grid-area: pat;
+    background-color: hsl(219, 29%, 14%);
+}
+
+.card:nth-of-type(5) {
+    color: rgb(62, 68, 84);
+    grid-area: kira;
+}
+
+.author-info {
+    width: fit-content;
+    display: grid;
+    grid-template-areas:
+        'pic name'
+        'pic title';
+    grid-template-columns: repeat(1fr, 3fr);
+}
+
+.author-info img {
+    grid-area: pic;
+    border-radius: 100%;
+    border: 3px hsl(210, 46%, 95%) solid;
+    margin-right: 10px;
+    width: 30px;
+}
+
+.author-info .author-name {
+    grid-area: name;
+}
+
+.author-info .author-title {
+    grid-area: title;
+    opacity: 50%;
+    font-size: 10px;
+}
+
+.text-area p {
+    font-size: 11px;
+    color: hsl(0, 0%, 81%);
+}
+
+.text-area h1 {
+    font-size: 15px;
+    font-weight: 600;
+    margin: 10px 0px;
+}
+
+@media (max-width: 600px) {
+    .grid-container {
+        margin: auto;
+        display: grid;
+        grid-template-areas:
+            'dan'
+            'jon'
+            'jea'
+            'pat'
+            'kira';
+        grid-template-rows: auto;
+        grid-template-columns: auto;
+    }
+}
